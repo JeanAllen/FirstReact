@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <style type="text/css">
+      #box {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <h1>First React page rendering...</h1>
+    </div>
+
+    <div id="shape">
+      <div id="box" onmouseover="doSomething()" onmouseout="change()"></div>
+    </div>
+    <script
+      crossorigin=""
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin=""
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script>
+      let change = () => {
+        document.getElementById("box").style.borderRadius = "100%";
+        document.getElementById("box").style.backgroundColor = "grey";
+      };
+      let doSomething = () => {
+        document.getElementById("box").style.borderRadius = "2px";
+        document.getElementById("box").style.backgroundColor = "green";
+      };
+      const App = React.createElement(
+        "h1",
+        {},
+        "Our First React page has rendered",
+      );
+      ReactDOM.render(App, document.getElementById("root"));
+    </script>
+  </body>
+</html>
